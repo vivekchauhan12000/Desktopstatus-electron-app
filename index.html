@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>insormation</title>
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+    <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script-->
+
+  </head>
+  <body>
+      <style>
+          body {
+            background-image: url('welcome-bg.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+          }
+               
+          h1 {color: aliceblue;
+            
+            padding-left: 80px;
+            padding-top: 5px;
+            font-family: "Arial", Times, serif;
+              }
+           h3 {
+  
+            padding-top: 3px;
+            padding-left: 80px;
+                 color:white;
+                 font-family: "Arial", Times, serif;                                             
+           }   
+          </style>
+  
+  
+   <div >
+      <bold><h1>System configuration</h1></bold>
+   <div id="output"></div>
+   </div>
+   
+   <h3> We are using Node.js <span id="node-version"></span>,</h3>
+   <h3>  Chromium <span id="chrome-version"></span>,</h3>
+
+   
+   
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+
+    <!-- You can also require other files to run in this process -->
+    
+
+   <script>
+   let output = `<h3> SYSTEM: ${process.arch}</h3>
+   <h3> processor: ${process.env.PROCESSOR_IDENTIFIER}</h3>
+   <h3> Total system memory: ${process.getSystemMemoryInfo().total}</h3>
+   <h3> Totalfree system memory: ${process.getSystemMemoryInfo().free}</h3>
+   <h3> Swap total: ${process.getSystemMemoryInfo().swapTotal}</h3>
+   <h3> Swap free: ${process.getSystemMemoryInfo().swapFree}</h3>
+   <h3> Computer name: ${process.env.USERDOMAIN}</h3>
+   <h3> Username: ${process.env.USERNAME}</h3>
+   <h3> User Home Path: ${process.env.Home}</h3>
+   <h3> System Drive: ${process.env.SYSTEMDRIVE}</h3>
+   <h3> System root: ${process.env.SYSTEMROOT}</h3>
+   `;
+     document.getElementById('output').innerHTML = output;
+   </script>
+
+    
+  </body>
+    
+</html>
